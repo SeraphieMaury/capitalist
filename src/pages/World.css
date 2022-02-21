@@ -1,0 +1,154 @@
+.header {
+    display: grid;
+    grid-template-columns: 25% 25% 30% 20%;
+    }
+   .main {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    }
+   .product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    }  
+img{
+    margin: 10px 0px 0px 10px;
+}
+.box1{
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px 0px rgba(51, 51, 51, 0.5);
+    min-height: 1px;
+    min-width: 60%;
+    width: 80px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 35px;
+    background-color: #BBD1EA;
+    font-weight: bold;
+}
+.box2{
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px 0px rgba(51, 51, 51, 0.5);
+    min-height: 1px;
+    min-width: 20%;
+    width: 45px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 35px;
+    background-color: #BBD1EA;
+    font-weight: bold;
+}
+.id{
+    margin-top: 45px;
+    font-weight: bold;
+}
+.produit1{
+    font-weight: bold;
+}
+.produit2{
+    font-weight: bold;
+}
+p{
+    margin-top: 10px;
+}
+p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.titre{
+    font-weight: bold;
+    font-family: 'Lucida Handwriting', sans-serif;
+    margin-left: 10px ;
+    color: #224062;
+    font-size: large;
+}
+.boutonManager{
+    border: 2px;
+    border-radius: 2px;
+    color: black;
+    font-weight: bold;
+    padding: 10px 15px;
+    width: 250px;
+    height: 10px;
+    margin-left: 10px;
+    margin-top: 30px;
+    text-align: center;
+    background: #4F749F;
+  }
+  .boutonUnlocks{
+    border: 2px;
+    border-radius: 2px;
+    color: black;
+    font-weight: bold;
+    padding: 10px 15px;
+    width: 250px;
+    height: 10px;
+    margin-left: 10px;
+    margin-top: 30px;
+    text-align: center;
+    background: #4F749F;
+  }
+  .boutonCash{
+    border: 2px;
+    border-radius: 2px;
+    color: black;
+    font-weight: bold;
+    padding: 10px 15px;
+    width: 250px;
+    height: 10px;
+    margin-left: 10px;
+    margin-top: 30px;
+    text-align: center;
+    background: #4F749F;
+  }
+  .boutonAngel{
+    border: 2px;
+    border-radius: 2px;
+    color: black;
+    font-weight: bold;
+    padding: 10px 15px;
+    width: 250px;
+    height: 10px;
+    margin-left: 10px;
+    margin-top: 30px;
+    text-align: center;
+    background: #4F749F;
+  }
+  .boutonInvestors{
+    border: 2px;
+    border-radius: 2px;
+    color: black;
+    font-weight: bold;
+    padding: 10px 15px;
+    width: 250px;
+    height: 10px;
+    margin-left: 10px;
+    margin-top: 30px;
+    text-align: center;
+    background: #4F749F;
+  }
+
+  .progress {
+    width: 100%;
+    max-width: 400px;
+    height: 25px;
+    transform: translate(-15%);
+    border-radius: 8px;
+    border: 1px black;
+  }
+  
+  .progress .progress__bar {
+    height: 100%;
+    width: 0%;
+    background-color: #224062;
+    border-radius: 8px;
+    animation: fill-bar 3s infinite;
+  }
+  
+  @keyframes fill-bar {
+    from {width: 0%;}
+    to {width: 100%;}
+  }
