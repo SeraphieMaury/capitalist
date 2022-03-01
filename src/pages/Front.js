@@ -54,14 +54,20 @@ const Front = () => {
         </div>
         <div className="product">
             <div className="produit1"> 
-            <img src="./images/colin.jpg" alt="colin" style={{width: '120px', borderRadius:'50%',transform: 'translate(+55%)'}}/>
+            <div className="lesdeux">
+            <div className="lepremier">
+            <img src="./images/colin.jpg" alt="colin" style={{width: '120px', borderRadius:'50%',transform: 'translate(+10%)'}}/>
+            </div>
+            <div className="lesecond">0</div>
+            </div>
+            <br></br>
             <div class="progress"> 
             <div class="progress__bar"></div>
             </div>
-            <p>ACHETER COLIN POUR 1 CREDIT ECTS</p>
+            <p>PRODUIRE COLIN POUR 1 CREDIT ECTS</p>
             </div>
             <div className="produit2"> 
-            <img src="./images/johana.jpg" alt="colin" style={{width: '120px', borderRadius:'50%',transform: 'translate(+55%)'}}/>
+            <img src="./images/jojo.jpg" alt="johana" style={{width: '120px', borderRadius:'50%',transform: 'translate(+10%)'}}/>
             <div class="progress"> 
             <div class="progress__bar"></div>
             </div>
