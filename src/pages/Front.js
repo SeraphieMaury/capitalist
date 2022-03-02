@@ -1,8 +1,11 @@
 import React from 'react';
 import "./World.css";
+import Product from "../../src/components/Product";
+
 
 const Front = () => {
     return(
+<React.Fragment>
 <div className="world">
         <div className="header">
             <div className = "logo"> 
@@ -16,7 +19,7 @@ const Front = () => {
             1 Crédit ECTS 
             </div>
             <div className="box2" style={{transform: 'translate(+380%)'}}> 
-            x0
+            0
             </div>
             <div className='id'> 
             Votre ID : 15482
@@ -64,14 +67,14 @@ const Front = () => {
             <div class="progress"> 
             <div class="progress__bar"></div>
             </div>
-            <p>PRODUIRE COLIN POUR 1 CREDIT ECTS</p>
+            <p id='fabrication' /* onClick = { () => startFabrication()} */>PRODUIRE COLIN POUR 1 CREDIT ECTS</p>
             </div>
             <div className="produit2"> 
             <img src="./images/jojo.jpg" alt="johana" style={{width: '120px', borderRadius:'50%',transform: 'translate(+10%)'}}/>
             <div class="progress"> 
             <div class="progress__bar"></div>
             </div>
-            <p>PRODUIRE JOHANA POUR 3 CREDIT ECTS</p>
+            <p id='fabrication'>PRODUIRE JOHANA POUR 3 CREDIT ECTS</p>
             </div>
             <div> troisième produit </div>
             <div> quatrième produit </div>
@@ -80,6 +83,7 @@ const Front = () => {
         </div>
     </div>
 </div>
+</React.Fragment>
     );
 };
 
