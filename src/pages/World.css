@@ -12,6 +12,8 @@
     }  
 img{
     margin: 10px 0px 0px 10px;
+    width: 80px;
+    transform: translate(-820%);
 }
 .box1{
     border-radius: 10px;

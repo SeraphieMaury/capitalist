@@ -1,25 +1,26 @@
 import Services from "./Services";
-import Product from "./components/Product.js";
 import 'App.tsx';
 import React, {ChangeEvent, useEffect, useState} from 'react';
+import Product from "./Product";
+
 
 type ProductProps = {
-    prod: typeof Product
-    services: Services
-   }
-   export default function ProductComponent({ prod, services } : ProductProps) 
-   { 
+prod: Product
+services: Services
+}
+    export default function ProductComponent({ prod, services } : ProductProps) 
+    {  
 
-    // function startFabrication() {
-    // const [progress, setProgress] = useState(0)
+ /* function startFabrication() {
+ const [progress, setProgress] = useState(0)
     
-    //     setProgress
-    // }
-
+  setProgress
+} */
 
    return (
     <div> 
 
     </div>
-   )}
-   
+   );
+};
+ 

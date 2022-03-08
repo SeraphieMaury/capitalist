@@ -1,10 +1,10 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {World} from "./World";
 import Front from "./pages/Front";
 import Services from "./Services";
-
+//import 'Product.tsx';
+import Product from "./Product";
 
 function App() {
   const [services, setServices] = useState(new Services(""))
@@ -41,6 +41,7 @@ function App() {
     <div className="App">
       <img src={services.server + world.logo}/>
       <Front/>
+      <Product prod={ world.products.product[0] } services={ services }/>
     </div>
   );
 }

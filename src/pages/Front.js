@@ -1,7 +1,5 @@
 import React from 'react';
 import "./World.css";
-import Product from "../../src/components/Product";
-
 
 const Front = () => {
     return(
@@ -55,7 +53,7 @@ const Front = () => {
         </a>
         </p>
         </div>
-        {/* <Product prod={ world.products.product[0] } services={ services }/> */}
+        {/* <Product prod={ world.products.product[0] } services={ services }/>   */}
         <div className="product">
             <div className="produit1"> 
             <div className="lesdeux">
