@@ -9,7 +9,7 @@ const Front = () => {
 <div className="world">
         <div className="header">
             <div className = "logo"> 
-            <img src="./images/logoISIS.png" alt="logoISIS" style={{width: '80px'}}/>
+            {/* <img src="./images/logoISIS.png" alt="logoISIS" style={{width: '80px'}}/> */}
             <br></br>
             <div className ="titre">
             PROMO 2023 CAPITALIST
@@ -55,6 +55,7 @@ const Front = () => {
         </a>
         </p>
         </div>
+        {/* <Product prod={ world.products.product[0] } services={ services }/> */}
         <div className="product">
             <div className="produit1"> 
             <div className="lesdeux">

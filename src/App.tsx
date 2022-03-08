@@ -39,6 +39,7 @@ function App() {
 
   return (
     <div className="App">
+      <img src={services.server + world.logo}/>
       <Front/>
     </div>
   );

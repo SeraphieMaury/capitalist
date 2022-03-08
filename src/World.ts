@@ -1,6 +1,6 @@
 export class World {
     name : string = ""
-    logo : string = ""
+    logo : string = "images/logoISIS.png"
     money: number = 0
     score: number = 0
     totalangels: number = 0
