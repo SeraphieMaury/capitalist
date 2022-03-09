@@ -33,7 +33,7 @@ services: Services
             <div className="progress"> 
             <div className="progress__bar"></div>
             </div>
-            <p id='fabrication' /* onClick = { () => startFabrication()} */>PRODUIRE {prod.name} POUR 1 CREDIT ECTS</p>
+            <p id='fabrication' /* onClick = { () => startFabrication()} */>PRODUIRE {prod.name} POUR {prod.cout} CREDIT(S) ECTS</p>
             </div>
         </div>
    );}

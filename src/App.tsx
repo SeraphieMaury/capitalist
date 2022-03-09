@@ -4,6 +4,7 @@ import {World} from "./World";
 import Services from "./Services";
 import ProductComponent from './Product';
 import "./pages/World.css";
+import {transform} from "./utils";
 
 function App() {
   const [services, setServices] = useState(new Services(""))
@@ -49,7 +50,9 @@ function App() {
             1 Crédit ECTS 
             </div>
             <div className="box2" style={{transform: 'translate(+380%)'}}> 
-            0
+            <div className ="argent">
+            <span dangerouslySetInnerHTML={{__html: transform(world.money)}}></span>
+            </div>
             </div>
             <div className='id'> 
             Votre ID : 15482
