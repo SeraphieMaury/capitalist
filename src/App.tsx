@@ -1,11 +1,9 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import './App.css';
 import {World} from "./World";
-import Front from "./pages/Front";
 import Services from "./Services";
-/* import Product from "./Product.tsx";
-import Product from "./Product"; */
-import {ProductComponent} from './Product';
+import ProductComponent from './Product';
+import "./pages/World.css";
 
 function App() {
   const [services, setServices] = useState(new Services(""))
@@ -41,8 +39,61 @@ function App() {
   return (
     <div className="App">
       <img src={services.server + world.logo}/>
-      <Front/>
-      <ProductComponent prod={ world.products.product[0] } services={ services }/> 
+      <div className="header">
+            <div className = "logo"> 
+            <div className ="titre">
+            PROMO 2023 CAPITALIST
+            </div>
+            </div>
+            <div className="box1"> 
+            1 Crédit ECTS 
+            </div>
+            <div className="box2" style={{transform: 'translate(+380%)'}}> 
+            0
+            </div>
+            <div className='id'> 
+            Votre ID : 15482
+            </div>
+        </div>
+        <hr></hr>
+        <br></br>
+    <div className="main">
+        <div className="bouton"> 
+        <p>
+        <a className={`button boutonManager`} href="/managers" >
+        MANAGERS
+        </a>
+        </p>
+        <p style={{marginTop:'100px'}}>
+        <a className={`button boutonUnlocks`} href="/unlocks" >
+        UNLOCKS
+        </a>
+        </p>
+        <p style={{marginTop:'100px'}}>
+        <a className={`button boutonCash`} href="/cash" >
+        CASH UPGRADES
+        </a>
+        </p>
+        <p style={{marginTop:'100px'}}>
+        <a className={`button boutonAngel`} href="/angel" >
+        ANGEL UPGRADES
+        </a>
+        </p>
+        <p style={{marginTop:'100px'}}>
+        <a className={`button boutonInvestors`} href="/investors" >
+        INVESTORS
+        </a>
+        </p>
+        </div>
+        <div className="product">
+      <ProductComponent prod={ world.products.product[0]} services={ services }/> 
+      <ProductComponent prod={ world.products.product[1]} services={ services }/>
+      <ProductComponent prod={ world.products.product[2]} services={ services }/> 
+      <ProductComponent prod={ world.products.product[3]} services={ services }/> 
+      <ProductComponent prod={ world.products.product[4]} services={ services }/> 
+      <ProductComponent prod={ world.products.product[5]} services={ services }/> 
+    </div>
+    </div>
     </div>
   );
 }
