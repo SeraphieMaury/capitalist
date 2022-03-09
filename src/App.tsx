@@ -67,22 +67,22 @@ function App() {
         MANAGERS
         </a>
         </p>
-        <p style={{marginTop:'100px'}}>
+        <p style={{marginTop:'150px'}}>
         <a className={`button boutonUnlocks`} href="/unlocks" >
         UNLOCKS
         </a>
         </p>
-        <p style={{marginTop:'100px'}}>
+        <p style={{marginTop:'150px'}}>
         <a className={`button boutonCash`} href="/cash" >
         CASH UPGRADES
         </a>
         </p>
-        <p style={{marginTop:'100px'}}>
+        <p style={{marginTop:'150px'}}>
         <a className={`button boutonAngel`} href="/angel" >
         ANGEL UPGRADES
         </a>
         </p>
-        <p style={{marginTop:'100px'}}>
+        <p style={{marginTop:'150px'}}>
         <a className={`button boutonInvestors`} href="/investors" >
         INVESTORS
         </a>
