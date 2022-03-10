@@ -1,10 +1,12 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import './App.css';
 import {World} from "./World";
+import {Pallier} from "./World";
 import Services from "./Services";
 import ProductComponent from './Product';
 import "./pages/World.css";
 import {transform} from "./utils";
+import './Managers';
 
 function App() {
   const [services, setServices] = useState(new Services(""))
@@ -63,10 +65,11 @@ function App() {
     <div className="main">
         <div className="bouton"> 
         <p>
-        <a className={`button boutonManager`} href="/managers" >
-        MANAGERS
-        </a>
+        
         </p>
+
+       
+
         <p style={{marginTop:'150px'}}>
         <a className={`button boutonUnlocks`} href="/unlocks" >
         UNLOCKS
