@@ -6,12 +6,13 @@ import {Product, World} from "./World";
 
 type ProductProps = {
 prod: Product
+/* onProductionDone: (product: Product) => void, */
 services: Services
 }
-    export default function ProductComponent({ prod, services } : ProductProps) 
+    export default function ProductComponent({ prod, /* onProductionDone ,*/services } : ProductProps) 
     {  
 
- function startFabrication() {
+/*  function startFabrication() {
  const [progress, setProgress] = useState(0)
 
     React.useEffect(() => {
@@ -28,7 +29,15 @@ services: Services
     }, 1000);
    }, []);
 
-}   
+}    */
+
+/* function calcScore() {
+   if () {
+  // quand la production est terminée, on prévient le composant parent 
+  onProductionDone(prod)
+   } 
+  } */
+  
 
    if (prod==null) return (
       <div></div>
@@ -47,7 +56,7 @@ services: Services
             <div className="progress"> 
             <div className="progress__bar"></div>
             </div>
-            <p id='fabrication' onClick = { () => startFabrication()} > PRODUIRE {prod.name} POUR {prod.cout} CREDIT(S) ECTS</p>
+            <p id='fabrication' /* onClick = { () => startFabrication()} */ > PRODUIRE {prod.name} POUR {prod.cout} CREDIT(S) ECTS</p>
             </div>
         </div>
    );}

@@ -8,18 +8,26 @@ import "./pages/World.css";
 import {transform} from "./utils";
 import Managers from './Managers';
 
+
 function App() {
   const [services, setServices] = useState(new Services(""))
   const [world, setWorld] = useState(new World())
+
+  const [isActive, setisActive] = useState(false);
+  const showManagers = () => {setisActive(!isActive)} 
 
   useEffect(() => {
     let services = new Services("")
     setServices(services)
     services.getWorld().then(response => {
     setWorld(response.data)
+console.log ("====response :",response.data);
+
     }
     )
 }, [])
+console.log ("======word :",world);
+console.log ("======managers :",world.managers.pallier[0]);
 
 // const savedCallback = useRef(calcScore)
 // useEffect(() => savedCallback.current = calcScore)
@@ -38,6 +46,14 @@ function App() {
 //  }, [])
 
 // setInterval(() => scalcScore(), 100)
+
+/* function onProductionDone(p: Product): void {
+  // calcul de la somme obtenue par la production du produit
+  let gain = …
+  // ajout de la somme à l’argent possédé
+  addToScore(gain)
+ } */
+ 
 
   return (
     <div className="App">
@@ -67,7 +83,10 @@ function App() {
         <p>
         
         </p>
-<Managers />
+    <Managers myworld={world} services={ services }/> 
+        <button onClick={showManagers} className="boutonMana" >
+          MANAGERS
+        </button> 
         <p style={{marginTop:'150px'}}>
         <a className={`button boutonUnlocks`} href="/unlocks" >
         UNLOCKS
@@ -90,12 +109,12 @@ function App() {
         </p>
         </div>
         <div className="product">
-      <ProductComponent prod={ world.products.product[0]} services={ services }/> 
-      <ProductComponent prod={ world.products.product[1]} services={ services }/>
-      <ProductComponent prod={ world.products.product[2]} services={ services }/> 
-      <ProductComponent prod={ world.products.product[3]} services={ services }/> 
-      <ProductComponent prod={ world.products.product[4]} services={ services }/> 
-      <ProductComponent prod={ world.products.product[5]} services={ services }/> 
+      <ProductComponent /* onProductionDone={onProductionDone} */ prod={ world.products.product[0]} services={ services }/> 
+      <ProductComponent /* onProductionDone={onProductionDone} */ prod={ world.products.product[1]} services={ services }/>
+      <ProductComponent /* onProductionDone={onProductionDone} */ prod={ world.products.product[2]} services={ services }/> 
+      <ProductComponent /* onProductionDone={onProductionDone} */ prod={ world.products.product[3]} services={ services }/> 
+      <ProductComponent /* onProductionDone={onProductionDone} */ prod={ world.products.product[4]} services={ services }/> 
+      <ProductComponent /* onProductionDone={onProductionDone} */ prod={ world.products.product[5]} services={ services }/> 
     </div>
     </div>
     </div>
