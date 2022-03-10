@@ -11,11 +11,24 @@ services: Services
     export default function ProductComponent({ prod, services } : ProductProps) 
     {  
 
- /* function startFabrication() {
+ function startFabrication() {
  const [progress, setProgress] = useState(0)
-    
- setProgress({})
-}   */
+
+    React.useEffect(() => {
+       const interval = setInterval(() => {
+       setProgress(zeroValue => {
+          const newValue = zeroValue + 100;
+
+          if (newValue === 100){
+             clearInterval(interval);
+          }
+
+          return newValue;
+       });
+    }, 1000);
+   }, []);
+
+}   
 
    if (prod==null) return (
       <div></div>
@@ -34,7 +47,7 @@ services: Services
             <div className="progress"> 
             <div className="progress__bar"></div>
             </div>
-            <p id='fabrication' /* onClick = { () => startFabrication(prod)} */> PRODUIRE {prod.name} POUR {prod.cout} CREDIT(S) ECTS</p>
+            <p id='fabrication' onClick = { () => startFabrication()} > PRODUIRE {prod.name} POUR {prod.cout} CREDIT(S) ECTS</p>
             </div>
         </div>
    );}

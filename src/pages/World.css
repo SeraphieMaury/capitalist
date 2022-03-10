@@ -150,12 +150,12 @@ p:hover{
     width: 0%;
     background-color: #224062;
     border-radius: 8px;
-    /* animation: fill-bar 3s infinite;*/
+    animation: fill-bar 3s infinite;
   } 
 
-  .fabrication:active{
+ /*  #fabrication:active .progress__bar{
     animation: fill-bar 1000ms infinite;
-  }  
+  }  */ 
   
   @keyframes fill-bar {
     from {width: 0%;}
