@@ -8,6 +8,9 @@ import "./pages/World.css";
 import {transform} from "./utils";
 
 const Managers = () => {
+const [services, setServices] = useState(new Services(""))
+const [world, setWorld] = useState(new World())
+
 const [isActive, setisActive] = useState(false);
 const showManagers = () => {setisActive(!isActive)}
 
@@ -48,7 +51,7 @@ manager =>
 </div>
 } </div>
 </div>
-)
+);
 }
 
 export default Managers;

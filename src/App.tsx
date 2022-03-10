@@ -6,7 +6,7 @@ import Services from "./Services";
 import ProductComponent from './Product';
 import "./pages/World.css";
 import {transform} from "./utils";
-import './Managers';
+import Managers from './Managers';
 
 function App() {
   const [services, setServices] = useState(new Services(""))
@@ -67,9 +67,7 @@ function App() {
         <p>
         
         </p>
-
-       
-
+<Managers />
         <p style={{marginTop:'150px'}}>
         <a className={`button boutonUnlocks`} href="/unlocks" >
         UNLOCKS
