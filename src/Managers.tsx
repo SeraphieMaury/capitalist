@@ -7,22 +7,24 @@ import ProductComponent from './Product';
 import "./pages/World.css";
 import {transform} from "./utils";
 
+
 type ManagersProps = {
   myworld: World
   services: Services
+  showManagers : Function
   }
 
-export default function Managers ({ myworld, services } : ManagersProps) {  
+export default function Managers ({ myworld, services, showManagers } : ManagersProps) {  
 
-const [isActive, setisActive] = useState(false);
-const showManagers = () => {setisActive(!isActive)}
-const hideManagers = () => {setisActive(isActive)}
+
+/* const showManagers = () => {setisActive(!isActive)} */
  
 console.log ("componentmanagers :",myworld.managers.pallier[0]);
 
 /* return{
   isActive, showManagers
 }; */
+
 
 return (
   <div>
@@ -53,10 +55,11 @@ manager =>
 </div>
 
 )}
-<button onClick={hideManagers} className="closebutton" >Fermer</button>
+<button /* onClick={hideManagers} */ className="closebutton" >Fermer</button>
 
 </div>
 </div>
+
 } </div>
 </div>
 );

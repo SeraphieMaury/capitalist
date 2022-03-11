@@ -13,9 +13,9 @@ function App() {
   const [services, setServices] = useState(new Services(""))
   const [world, setWorld] = useState(new World())
   const [prod, setProduct] = useState(new Product())
-
   const [isActive, setisActive] = useState(false);
-  const showManagers = () => {setisActive(!isActive)} 
+
+  /* const showManagers = () => {setisActive(!isActive)}  */
 
   useEffect(() => {
     let services = new Services("")
@@ -30,6 +30,13 @@ console.log ("====response :",response.data);
 console.log ("======word :",world);
 console.log ("======managers :",world.managers.pallier[0]);
 
+function showManagers() {
+  if (isActive == true){
+    setisActive(false)
+  }else{
+    setisActive(true)
+  }
+}
 // const savedCallback = useRef(calcScore)
 // useEffect(() => savedCallback.current = calcScore)
 // useEffect(() => {
@@ -118,6 +125,11 @@ console.log ("======managers :",world.managers.pallier[0]);
       <ProductComponent onProductionDone={onProductionDone} prod={ world.products.product[4]} services={ services }/> 
       <ProductComponent onProductionDone={onProductionDone} prod={ world.products.product[5]} services={ services }/> 
     </div>
+    { isActive &&
+    <div className = "manager">
+    <Managers myworld={world} services={ services } showManagers={showManagers}/>
+    </div>
+}
     </div>
     </div>
   );
