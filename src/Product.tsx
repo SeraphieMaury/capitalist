@@ -3,6 +3,9 @@ import './App.tsx';
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import {Product, World} from "./World";
 
+/* const [progress, setProgress] = useState(0) 
+config last update*/
+
 
 type ProductProps = {
 prod: Product
@@ -13,7 +16,6 @@ services: Services
     {  
 
 /*  function startFabrication() {
- const [progress, setProgress] = useState(0)
 
     React.useEffect(() => {
        const interval = setInterval(() => {
@@ -32,7 +34,17 @@ services: Services
 }    */
 
 /* function calcScore() {
-   if () {
+   if (prod.timeleft == 0) {
+      setProgress(0)
+   }else{
+      prod.timeleft -= Date.now() - this.lastupdate
+   }
+   if (prod.timeleft =< 0){
+      prod.progressbarvalue = 0
+      prod.timeleft = 0
+   }else{
+      prod.progressbarvalue = ((this.product.vitesse - this.product.timeleft) / this.product.vitesse) * 100
+   }
   // quand la production est terminée, on prévient le composant parent 
   onProductionDone(prod)
    } 
