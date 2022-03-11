@@ -2,22 +2,35 @@ import Services from "./Services";
 import './App.tsx';
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import {Product, World} from "./World";
-
-/* const [progress, setProgress] = useState(0) 
-config last update*/
+import ProgressBar from './ProgressBar';
+import Box from '@mui/material/Box';
 
 
 type ProductProps = {
 prod: Product
-/* onProductionDone: (product: Product) => void, */
+onProductionDone: (product: Product) => void,
 services: Services
 }
-    export default function ProductComponent({ prod, /* onProductionDone ,*/services } : ProductProps) 
+    export default function ProductComponent({ prod, onProductionDone, services } : ProductProps) 
     {  
 
-/*  function startFabrication() {
+   const [progress, setProgress] = useState(0) 
+   const[lastupdate, setLastupdate] = useState(0)
 
-    React.useEffect(() => {
+  function startFabrication() {
+
+   const [completed, setCompleted] = useState(0);
+
+   useEffect(() => {
+     setInterval(() => setCompleted(Math.floor(Math.random() * 100) + 1), 2000);
+   }, []);
+
+   return (
+      <div>
+         <ProgressBar completed={completed}/>
+      </div>
+   )
+    /* useEffect(() => {
        const interval = setInterval(() => {
        setProgress(zeroValue => {
           const newValue = zeroValue + 100;
@@ -29,9 +42,9 @@ services: Services
           return newValue;
        });
     }, 1000);
-   }, []);
+   }, []); */
 
-}    */
+}
 
 /* function calcScore() {
    if (prod.timeleft == 0) {
@@ -66,9 +79,12 @@ services: Services
             </div>
             <br></br>
             <div className="progress"> 
-            <div className="progress__bar"></div>
+            <div className="progress__bar">
+            <Box sx={{width: '100%'}}>
+         <ProgressBar transitionDuration={"0.1s"} customLabel={" "} completed={progress}/>
+        </Box></div>
             </div>
-            <p id='fabrication' /* onClick = { () => startFabrication()} */ > PRODUIRE {prod.name} POUR {prod.cout} CREDIT(S) ECTS</p>
+             <p id='fabrication' onClick = { () => startFabrication()} > PRODUIRE {prod.name} POUR {prod.cout} CREDIT(S) ECTS</p>
             </div>
         </div>
    );}

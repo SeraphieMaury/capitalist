@@ -136,7 +136,7 @@ p:hover{
     background: #4F749F;
   }
 
-  .progress {
+  /* .progress {
     width: 100%;
     max-width: 350px;
     height: 25px;
@@ -152,7 +152,7 @@ p:hover{
     border-radius: 8px;
     animation: fill-bar 3s infinite;
   } 
-
+ */
  /*  #fabrication:active .progress__bar{
     animation: fill-bar 1000ms infinite;
   }  */ 
