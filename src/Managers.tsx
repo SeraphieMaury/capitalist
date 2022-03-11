@@ -24,24 +24,24 @@ console.log ("componentmanagers :",myworld.managers.pallier[0]);
 return (
 <div className="modal">
 <div>
-<h1 className="title">Managers make you feel better !</h1>
+<h1 className="title">Choisissez vos managers !</h1>
 </div>
-<div>
+<div className="manager">
 {myworld.managers.pallier.filter( manager => !manager.unlocked).map(
 manager =>
 <div key={manager.idcible} className="managergrid">
 <div>
 <div className="logo">
-<img alt="manager logo" className="round" src= {services.server + manager.logo} />
+<img className="round" src= {services.server + manager.logo} style={{borderRadius:'50%'}}/>
 </div>
 </div>
 <div className="infosmanager">
 <div className="managername"> {manager.name} </div>
 <div className="managercible"> {myworld.products.product[manager.idcible-1].name} </div>
-<div className="managercost"> {manager.seuil} </div>
+<div className="managercost"> {manager.seuil} crédits ECTS </div>
 </div>
 {/* <div onClick={() => hireManager(world.managers)}> */}
-<button disabled={myworld.money < manager.seuil}>Embauché !</button>
+<button className="embauche" disabled={myworld.money < manager.seuil}>Embauché !</button>
 </div>
 
 )}

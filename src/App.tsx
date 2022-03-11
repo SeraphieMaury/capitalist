@@ -45,11 +45,9 @@ function showManagers() {
   return (
     <div className="App">
       <img src={services.server + world.logo}/>
-      <div className="header">
-            <div className = "logo"> 
+      <div className="header">  
             <div className ="titre">
             PROMO 2023 CAPITALIST
-            </div>
             </div>
             <div className="box1"> 
             <span dangerouslySetInnerHTML={{__html: transform(world.money)}}></span> Crédit ECTS 
@@ -70,28 +68,28 @@ function showManagers() {
         <p>
         
         </p>
-        <button onClick={showManagers} className="boutonMana" >
+        <button onClick={showManagers} className="bouton">
           MANAGERS
         </button> 
         <p style={{marginTop:'150px'}}>
-        <a className={`button boutonUnlocks`} href="/unlocks" >
+        <button className="bouton">
         UNLOCKS
-        </a>
+        </button>
         </p>
         <p style={{marginTop:'150px'}}>
-        <a className={`button boutonCash`} href="/cash" >
+        <button className="bouton">
         CASH UPGRADES
-        </a>
+        </button>
         </p>
         <p style={{marginTop:'150px'}}>
-        <a className={`button boutonAngel`} href="/angel" >
+        <button className="bouton">
         ANGEL UPGRADES
-        </a>
+        </button>
         </p>
         <p style={{marginTop:'150px'}}>
-        <a className={`button boutonInvestors`} href="/investors" >
+        <button className="bouton">
         INVESTORS
-        </a>
+        </button>
         </p>
         </div>
         <div className="product">

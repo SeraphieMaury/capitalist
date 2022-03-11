@@ -157,10 +157,10 @@ p:hover{
     animation: fill-bar 1000ms infinite;
   }  */ 
   
-  @keyframes fill-bar {
+  /* @keyframes fill-bar {
     from {width: 0%;}
     to {width: 100%;}
-  } 
+  }  */
 
   .lesdeux{
     position: relative;
@@ -185,14 +185,65 @@ p:hover{
   .modal {
     position: fixed; /* reste en place */
     z-index: 2; /* au dessus du reste */
-    width: 800px; /* largeur */
+    width: 1000px; /* largeur */
     height: 800px; /* hauteur */
-    overflow: auto; /* barre de scroll si besoin */
+    overflow-y: scroll; /* barre de scroll si besoin */
     background-color: white; /* opaque */
     border: solid;
-    top:10; /* a 10% du haut */
+    top: 100px; /* a 5% du haut */
     left:20%; /* a 20% de la gauche */
    }
+   .manager{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   }
+   .logo{
+    width: '120px';
+    border-radius:'50%';
+    transform: translate(+115%);
+    position: relative;
+    top : 20px;
+   }
+
+.managergrid{
+  border : solid black 2px;
+  margin: 5px;
+  height: 170px;
+}
+.managercost{
+  font-weight: bold;
+  position: relative;
+    top : -80px;
+    left : 80px;
+}
+.managername{
+  position: relative;
+    top : -80px;
+    left : 80px;
+}
+.managercible{
+  position: relative;
+    top : -80px;
+    left : 80px;
+}
+.embauche{
+  position: relative;
+    top : -80px;
+    left : 80px;
+}
+.bouton{
+  background-color: #1c87c9;
+        border: none;
+        color: white;
+        padding: 20px 34px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 4px 2px;
+        cursor: pointer;
+}
+
  
   
 
