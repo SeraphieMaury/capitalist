@@ -1,7 +1,6 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import './App.css';
 import {Product, World} from "./World";
-import {Pallier} from "./World";
 import Services from "./Services";
 import ProductComponent from './Product';
 import "./pages/World.css";
@@ -15,7 +14,6 @@ function App() {
   const [prod, setProduct] = useState(new Product())
   const [isActive, setisActive] = useState(false);
 
-  /* const showManagers = () => {setisActive(!isActive)}  */
 
   useEffect(() => {
     let services = new Services("")
@@ -27,8 +25,6 @@ console.log ("====response :",response.data);
     }
     )
 }, [])
-console.log ("======word :",world);
-console.log ("======managers :",world.managers.pallier[0]);
 
 function showManagers() {
   if (isActive == true){
@@ -37,23 +33,6 @@ function showManagers() {
     setisActive(true)
   }
 }
-// const savedCallback = useRef(calcScore)
-// useEffect(() => savedCallback.current = calcScore)
-// useEffect(() => {
-//  let timer = setInterval(() => savedCallback.current(), 100)
-//  return function cleanup() {
-//  if (timer) clearInterval(timer)
-//  }
-// }, [])
-
-// useEffect(() => {
-//   let timer = setInterval(() => sacalcScore(), 100)
-//   return function cleanup() {
-//   if (timer) clearInterval(timer)
-//   }
-//  }, [])
-
-// setInterval(() => scalcScore(), 100)
 
  function onProductionDone(p: Product): void {
   // calcul de la somme obtenue par la production du produit
@@ -73,11 +52,11 @@ function showManagers() {
             </div>
             </div>
             <div className="box1"> 
-            1 Crédit ECTS 
+            <span dangerouslySetInnerHTML={{__html: transform(world.money)}}></span> Crédit ECTS 
             </div>
             <div className="box2" style={{transform: 'translate(+380%)'}}> 
             <div className ="argent">
-            <span dangerouslySetInnerHTML={{__html: transform(world.money)}}></span>
+            x0
             </div>
             </div>
             <div className='id'> 
@@ -91,7 +70,6 @@ function showManagers() {
         <p>
         
         </p>
-    {/* <Managers myworld={world} services={ services }/>  */}
         <button onClick={showManagers} className="boutonMana" >
           MANAGERS
         </button> 
@@ -126,9 +104,10 @@ function showManagers() {
       <ProductComponent onProductionDone={onProductionDone} prod={ world.products.product[5]} services={ services }/> 
     </div>
     { isActive &&
-    <div className = "manager">
+    <div className = "modal">
     <Managers myworld={world} services={ services } showManagers={showManagers}/>
     </div>
+    
 }
     </div>
     </div>

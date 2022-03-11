@@ -16,22 +16,12 @@ type ManagersProps = {
 
 export default function Managers ({ myworld, services, showManagers } : ManagersProps) {  
 
-
-/* const showManagers = () => {setisActive(!isActive)} */
  
 console.log ("componentmanagers :",myworld.managers.pallier[0]);
 
-/* return{
-  isActive, showManagers
-}; */
 
 
 return (
-  <div>
- {/*  <button onClick={showManagers} className="boutonMana" >
-  MANAGERS
-  </button> */}
-  <div> { /* showManagers  && */ 
 <div className="modal">
 <div>
 <h1 className="title">Managers make you feel better !</h1>
@@ -46,21 +36,17 @@ manager =>
 </div>
 </div>
 <div className="infosmanager">
-<div className="managername"> { manager.name} </div>
-<div className="managercible"> { myworld.products.product[manager.idcible-1].name } </div>
-<div className="managercost"> { manager.seuil} </div>
+<div className="managername"> {manager.name} </div>
+<div className="managercible"> {myworld.products.product[manager.idcible-1].name} </div>
+<div className="managercost"> {manager.seuil} </div>
 </div>
 {/* <div onClick={() => hireManager(world.managers)}> */}
 <button disabled={myworld.money < manager.seuil}>Embauché !</button>
 </div>
 
 )}
-<button /* onClick={hideManagers} */ className="closebutton" >Fermer</button>
 
 </div>
-</div>
-
-} </div>
 </div>
 );
 }

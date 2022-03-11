@@ -1,6 +1,6 @@
 import Services from "./Services";
 import './App.tsx';
-import React, {ChangeEvent, useEffect, useState} from 'react';
+import React, {ChangeEvent, useEffect, useRef, useState} from 'react';
 import {Product, World} from "./World";
 import ProgressBar from './ProgressBar';
 import Box from '@mui/material/Box';
@@ -15,52 +15,53 @@ services: Services
     {  
 
    const [progress, setProgress] = useState(0) 
-   const[lastupdate, setLastupdate] = useState(0)
    const [completed, setCompleted] = useState(0);
+   const savedCallback = useRef(calcScore)
+   let lastupdate = Date.now();
 
-  function StartFabrication() {
-     
+   useEffect(() => savedCallback.current = calcScore)
+   
    useEffect(() => {
-     setInterval(() => setCompleted(Math.floor(Math.random() * 100) + 1), 2000);
-   }, []);
+    let timer = setInterval(() => savedCallback.current(), 100)
+    return function cleanup() {
+    if (timer) clearInterval(timer)
+    }
+   }, [])
 
-   return (
-      <div>
-         <ProgressBar completed={completed}/>
+  function startFabrication() {
+     
+   setProgress(0)
+   prod.timeleft=prod.vitesse
+   lastupdate = Date.now()
+    return (
+       <div>
+          {/* <ProgressBar completed={completed}/> */}
       </div>
    )
-    /* useEffect(() => {
-       const interval = setInterval(() => {
-       setProgress(zeroValue => {
-          const newValue = zeroValue + 100;
-
-          if (newValue === 100){
-             clearInterval(interval);
-          }
-
-          return newValue;
-       });
-    }, 1000);
-   }, []); */
-
 }
 
-/* function calcScore() {
-   if (prod.timeleft == 0) {
+ function calcScore() {
+   if (prod == null){}
+   else{
+   if (prod.timeleft == 0) {}
+   else{
+      let now = Date.now()
+      let lapsetime = now - lastupdate
+      prod.timeleft = prod.timeleft - lapsetime
+      lastupdate = now
+   
+   if (prod.timeleft <= 0){
       setProgress(0)
+      prod.timeleft = 0 
+      onProductionDone(prod)
    }else{
-      prod.timeleft -= Date.now() - this.lastupdate
-   }
-   if (prod.timeleft =< 0){
-      prod.progressbarvalue = 0
-      prod.timeleft = 0
-   }else{
-      prod.progressbarvalue = ((this.product.vitesse - this.product.timeleft) / this.product.vitesse) * 100
-   }
-  // quand la production est terminée, on prévient le composant parent 
-  onProductionDone(prod)
+
+      setProgress(((prod.vitesse - prod.timeleft) / prod.vitesse) * 100);
    } 
-  } */
+   }
+}
+}
+  
   
 
    if (prod==null) return (
@@ -83,9 +84,10 @@ services: Services
          <ProgressBar transitionDuration={"0.1s"} customLabel={" "} completed={progress}/>
         </Box></div>
             </div>
-             <p id='fabrication' onClick = { () => StartFabrication()} > PRODUIRE {prod.name} POUR {prod.cout} CREDIT(S) ECTS</p>
+             <p id='fabrication' onClick = { () => startFabrication()} > PRODUIRE {prod.name} POUR {prod.cout} CREDIT(S) ECTS</p>
             </div>
         </div>
-   );}
+   );
 };
+}
  
