@@ -16,11 +16,10 @@ services: Services
 
    const [progress, setProgress] = useState(0) 
    const[lastupdate, setLastupdate] = useState(0)
-
-  function startFabrication() {
-
    const [completed, setCompleted] = useState(0);
 
+  function StartFabrication() {
+     
    useEffect(() => {
      setInterval(() => setCompleted(Math.floor(Math.random() * 100) + 1), 2000);
    }, []);
@@ -84,7 +83,7 @@ services: Services
          <ProgressBar transitionDuration={"0.1s"} customLabel={" "} completed={progress}/>
         </Box></div>
             </div>
-             <p id='fabrication' onClick = { () => startFabrication()} > PRODUIRE {prod.name} POUR {prod.cout} CREDIT(S) ECTS</p>
+             <p id='fabrication' onClick = { () => StartFabrication()} > PRODUIRE {prod.name} POUR {prod.cout} CREDIT(S) ECTS</p>
             </div>
         </div>
    );}
