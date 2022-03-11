@@ -34,6 +34,10 @@ function showManagers() {
   }
 }
 
+/* function hireManager() {
+
+} */
+
  function onProductionDone(p: Product): void {
   // calcul de la somme obtenue par la production du produit
   let gain = p.revenu * p.quantite

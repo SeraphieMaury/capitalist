@@ -6,6 +6,7 @@ import {Services} from "./Services";
 import ProductComponent from './Product';
 import "./pages/World.css";
 import {transform} from "./utils";
+import hireManager from "./App";
 
 
 type ManagersProps = {
@@ -15,11 +16,6 @@ type ManagersProps = {
   }
 
 export default function Managers ({ myworld, services, showManagers } : ManagersProps) {  
-
- 
-console.log ("componentmanagers :",myworld.managers.pallier[0]);
-
-
 
 return (
 <div className="modal">
@@ -37,10 +33,11 @@ manager =>
 </div>
 <div className="infosmanager">
 <div className="managername"> {manager.name} </div>
+<div className="managername"> MANAGER DE </div>
 <div className="managercible"> {myworld.products.product[manager.idcible-1].name} </div>
 <div className="managercost"> {manager.seuil} crédits ECTS </div>
 </div>
-{/* <div onClick={() => hireManager(world.managers)}> */}
+{/* <div onClick={() => hireManager(myworld.managers)}/> */}
 <button className="embauche" disabled={myworld.money < manager.seuil}>Embauché !</button>
 </div>
 
