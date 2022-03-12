@@ -33,11 +33,7 @@ services: Services
    setProgress(0)
    prod.timeleft=prod.vitesse
    lastupdate = Date.now()
-    return (
-       <div>
-          {/* <ProgressBar completed={completed}/> */}
-      </div>
-   )
+   
 }
 
  function calcScore() {
@@ -78,7 +74,7 @@ services: Services
             <div className="produit1"> 
             <div className="lesdeux">
             <div className="lepremier">
-            <img className="round" src={services.server + prod.logo} style={{width: '120px', borderRadius:'50%',transform: 'translate(+10%)'}}/>
+            <img id='fabrication' className="round" src={services.server + prod.logo} style={{width: '120px', borderRadius:'50%',transform: 'translate(+10%)'}}  onClick = { () => startFabrication()}/>
             </div>
             <div className="lesecond">0</div>
             </div>
@@ -89,7 +85,7 @@ services: Services
          <ProgressBar transitionDuration={"0.1s"} customLabel={" "} completed={progress}/>
         </Box></div>
             </div>
-             <p id='fabrication' onClick = { () => startFabrication()} > PRODUIRE {prod.name} POUR {prod.cout} CREDIT(S) ECTS</p>
+             <p>ACHETER {prod.name} {} POUR {prod.cout} CREDIT(S) ECTS</p>
             </div>
         </div>
    );
