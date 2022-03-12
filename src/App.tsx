@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import './App.css';
-import {Product, World} from "./World";
+import {Product, World, Pallier} from "./World";
 import Services from "./Services";
 import ProductComponent from './Product';
 import "./pages/World.css";
@@ -34,17 +34,17 @@ function showManagers() {
   }
 }
 
-/* function hireManager() {
-
-} */
-
  function onProductionDone(p: Product): void {
   // calcul de la somme obtenue par la production du produit
   let gain = p.revenu * p.quantite
   // ajout de la somme à l’argent possédé
-  //addToScore(gain)
+  addToScoreP(gain)
  }
  
+ function addToScoreP(value: number): void {
+   setWorld(world => ({ ...world, money: world.money + value, score: world.score + value}))
+ }
+
 
   return (
     <div className="App">

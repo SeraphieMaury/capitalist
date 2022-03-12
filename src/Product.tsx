@@ -59,6 +59,11 @@ services: Services
       setProgress(((prod.vitesse - prod.timeleft) / prod.vitesse) * 100);
    } 
    }
+
+   /* if (prod.managerUnlocked == true) {
+      setProgress(((prod.vitesse - prod.timeleft) / prod.vitesse) * 100);
+
+   } */
 }
 }
   

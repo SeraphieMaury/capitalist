@@ -6,8 +6,6 @@ import {Services} from "./Services";
 import ProductComponent from './Product';
 import "./pages/World.css";
 import {transform} from "./utils";
-import hireManager from "./App";
-
 
 type ManagersProps = {
   myworld: World
@@ -16,6 +14,20 @@ type ManagersProps = {
   }
 
 export default function Managers ({ myworld, services, showManagers } : ManagersProps) {  
+  
+const [world, setWorld] = useState(new World())
+
+  function hireManager(m: Pallier) {
+    myworld.money -= m.seuil;
+    addToScoreM(myworld.money);
+    m.unlocked = true;
+    myworld.products.product[m.idcible - 1].managerUnlocked = true;
+  } 
+
+   function addToScoreM(value: number): void {
+     setWorld(world => ({ ...world, money: world.money + value, score: world.score + value}))
+   }
+
 
 return (
 <div className="modal">
@@ -37,8 +49,9 @@ manager =>
 <div className="managercible"> {myworld.products.product[manager.idcible-1].name} </div>
 <div className="managercost"> {manager.seuil} crédits ECTS </div>
 </div>
-{/* <div onClick={() => hireManager(myworld.managers)}/> */}
-<button className="embauche" disabled={myworld.money < manager.seuil}>Embauché !</button>
+<div onClick={() => hireManager(manager)}>
+<button className="embauche" disabled={myworld.money < manager.seuil}>Embaucher !</button>
+</div>
 </div>
 
 )}
