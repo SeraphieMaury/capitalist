@@ -28,12 +28,13 @@ services: Services
     }
    }, [])
 
-  function startFabrication() {
-     
+  function startFabrication(p: Product) {
+     //if (p.quantite>0) {
    setProgress(0)
    prod.timeleft=prod.vitesse
    lastupdate = Date.now()
-   
+     //}
+     //else {}
 }
 
  function calcScore() {
@@ -41,15 +42,15 @@ services: Services
    else{
    if (prod.timeleft == 0) {}
    else{
-      let now = Date.now()
-      let lapsetime = now - lastupdate
-      prod.timeleft = prod.timeleft - lapsetime
-      lastupdate = now
+      let now = Date.now();
+      let lapsetime = now - lastupdate;
+      prod.timeleft = prod.timeleft - lapsetime;
+      lastupdate = now;
    
    if (prod.timeleft <= 0){
-      setProgress(0)
-      prod.timeleft = 0 
-      onProductionDone(prod)
+      setProgress(0);
+      prod.timeleft = 0 ;
+      onProductionDone(prod);
    }else{
 
       setProgress(((prod.vitesse - prod.timeleft) / prod.vitesse) * 100);
@@ -73,8 +74,8 @@ services: Services
     <div>  
             <div className="produit1"> 
             <div className="lesdeux">
-            <div className="lepremier">
-            <img id='fabrication' className="round" src={services.server + prod.logo} style={{width: '120px', borderRadius:'50%',transform: 'translate(+10%)'}}  onClick = { () => startFabrication()}/>
+            <div className="lepremier" onClick = { () => startFabrication(prod)}>
+            <img id='fabrication' className="round" src={services.server + prod.logo} style={{width: '120px', borderRadius:'50%',transform: 'translate(+10%)'}}/>
             </div>
             <div className="lesecond">0</div>
             </div>

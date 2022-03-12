@@ -36,9 +36,9 @@ function showManagers() {
 
  function onProductionDone(p: Product): void {
   // calcul de la somme obtenue par la production du produit
-  let gain = p.revenu * p.quantite
+  let gain = p.revenu * p.quantite;
   // ajout de la somme à l’argent possédé
-  addToScoreP(gain)
+  addToScoreP(gain);
  }
  
  function addToScoreP(value: number): void {
@@ -98,12 +98,12 @@ function showManagers() {
         </div>
         <div className="product">
        
-      <ProductComponent onProductionDone={onProductionDone} prod={ world.products.product[0]} services={ services }/> 
-      <ProductComponent onProductionDone={onProductionDone} prod={ world.products.product[1]} services={ services }/>
-      <ProductComponent onProductionDone={onProductionDone} prod={ world.products.product[2]} services={ services }/> 
-      <ProductComponent onProductionDone={onProductionDone} prod={ world.products.product[3]} services={ services }/> 
-      <ProductComponent onProductionDone={onProductionDone} prod={ world.products.product[4]} services={ services }/> 
-      <ProductComponent onProductionDone={onProductionDone} prod={ world.products.product[5]} services={ services }/> 
+      <ProductComponent prod={ world.products.product[0]} onProductionDone={onProductionDone} services={ services }/> 
+      <ProductComponent prod={ world.products.product[1]} onProductionDone={onProductionDone} services={ services }/>
+      <ProductComponent prod={ world.products.product[2]} onProductionDone={onProductionDone} services={ services }/> 
+      <ProductComponent prod={ world.products.product[3]} onProductionDone={onProductionDone} services={ services }/> 
+      <ProductComponent prod={ world.products.product[4]} onProductionDone={onProductionDone} services={ services }/> 
+      <ProductComponent prod={ world.products.product[5]} onProductionDone={onProductionDone} services={ services }/> 
     </div>
     { isActive &&
     <div className = "modal">
