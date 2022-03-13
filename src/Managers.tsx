@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import './App.css';
 import {World} from "./World";
 import {Pallier} from "./World";
+import {Product} from "./World";
 import {Services} from "./Services";
 import ProductComponent from './Product';
 import "./pages/World.css";
@@ -18,11 +19,16 @@ export default function Managers ({ myworld, services, showManagers } : Managers
 const [world, setWorld] = useState(new World())
 
   function hireManager(m: Pallier) {
+    if (myworld.products.product[m.idcible - 1].quantite > 0) {
     myworld.money -= m.seuil;
     addToScoreM(world.money);
     m.unlocked = true;
     myworld.products.product[m.idcible - 1].managerUnlocked = true;
-  } 
+  }
+  else{
+  <div>Vous n'avez pas de" + {Product.name} + "en stock"</div>    //ça fonctionne pas
+}
+} 
 
    function addToScoreM(value: number): void {
      setWorld(world => ({ ...world, money: world.money + value, score: world.score + value}))

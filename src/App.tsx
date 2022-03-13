@@ -38,10 +38,10 @@ function showManagers() {
   // calcul de la somme obtenue par la production du produit
   let gain = p.revenu * p.quantite;
   // ajout de la somme à l’argent possédé
-  addToScoreP(gain);
+  addToScore(gain);
  }
  
- function addToScoreP(value: number): void { 
+ function addToScore(value: number): void { 
    setWorld(world => ({ ...world, money: world.money + value, score: world.score + value })) 
   }
 
@@ -72,7 +72,7 @@ function showManagers() {
             PROMO 2023 CAPITALIST
             </div>
             <div className="box1"> 
-            <span dangerouslySetInnerHTML={{__html: transform(world.money)}}></span> Crédit ECTS 
+            <span dangerouslySetInnerHTML={{__html: transform(world.money)}}/> Crédit ECTS
             </div>
             <div className="box2" style={{transform: 'translate(+380%)'}}> 
             <div className ="multi" onClick={multi}> {qtmulti}
