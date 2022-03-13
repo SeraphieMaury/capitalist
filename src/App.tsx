@@ -6,11 +6,15 @@ import ProductComponent from './Product';
 import "./pages/World.css";
 import {transform} from "./utils";
 import Managers from './Managers';
+import Unlocks from './Unlocks';
+import CashUpgrades from './CashUpgrades';
 
 function App() {
   const [services, setServices] = useState(new Services(""))
   const [world, setWorld] = useState(new World())
-  const [isActive, setisActive] = useState(false);
+  const [isActiveM, setisActiveM] = useState(false);
+  const [isActiveU, setisActiveU] = useState(false);
+  const [isActiveC, setisActiveC] = useState(false);
   let [qtmulti, setQtmulti] = useState(1);
   let [vmulti, setVmulti] = useState('x1');
 
@@ -27,10 +31,26 @@ console.log ("====response :",response.data);
 }, [])
 
 function showManagers() {
-  if (isActive == true){
-    setisActive(false)
+  if (isActiveM == true){
+    setisActiveM(false)
   }else{
-    setisActive(true)
+    setisActiveM(true)
+  }
+}
+
+function showUnlocks() {
+  if (isActiveU == true){
+    setisActiveU(false)
+  }else{
+    setisActiveU(true)
+  }
+}
+
+function showCashUpgrades() {
+  if (isActiveC == true){
+    setisActiveC(false)
+  }else{
+    setisActiveC(true)
   }
 }
 
@@ -85,23 +105,23 @@ function showManagers() {
         <hr></hr>
         <br></br>
     <div className="main">
-        <div className="bouton"> 
-        <p>
-        
-        </p>
+        <div className="bouton">
         <button onClick={showManagers} className="bouton">
           MANAGERS
         </button> 
+
         <p style={{marginTop:'150px'}}>
-        <button className="bouton">
+        <button onClick={showUnlocks} className="bouton">
         UNLOCKS
         </button>
         </p>
+        
         <p style={{marginTop:'150px'}}>
-        <button className="bouton">
+        <button onClick={showCashUpgrades} className="bouton">
         CASH UPGRADES
         </button>
         </p>
+
         <p style={{marginTop:'150px'}}>
         <button className="bouton">
         ANGEL UPGRADES
@@ -115,22 +135,31 @@ function showManagers() {
         </div>
         <div className="product">
        
-      <ProductComponent prod={world.products.product[0]} qtmulti={qtmulti} money={world.money} onProductionDone={onProductionDone} services={services} myworld={world}/> 
-      <ProductComponent prod={world.products.product[1]} qtmulti={qtmulti} money={world.money} onProductionDone={onProductionDone} services={services} myworld={world}/>
-      <ProductComponent prod={world.products.product[2]} qtmulti={qtmulti} money={world.money} onProductionDone={onProductionDone} services={services} myworld={world}/> 
-      <ProductComponent prod={world.products.product[3]} qtmulti={qtmulti} money={world.money} onProductionDone={onProductionDone} services={services} myworld={world}/> 
-      <ProductComponent prod={world.products.product[4]} qtmulti={qtmulti} money={world.money} onProductionDone={onProductionDone} services={services} myworld={world}/> 
-      <ProductComponent prod={world.products.product[5]} qtmulti={qtmulti} money={world.money} onProductionDone={onProductionDone} services={services} myworld={world}/> 
+      <ProductComponent prod={world.products.product[0]} qtmulti={qtmulti} onProductionDone={onProductionDone} services={services} myworld={world}/> 
+      <ProductComponent prod={world.products.product[1]} qtmulti={qtmulti} onProductionDone={onProductionDone} services={services} myworld={world}/>
+      <ProductComponent prod={world.products.product[2]} qtmulti={qtmulti} onProductionDone={onProductionDone} services={services} myworld={world}/> 
+      <ProductComponent prod={world.products.product[3]} qtmulti={qtmulti} onProductionDone={onProductionDone} services={services} myworld={world}/> 
+      <ProductComponent prod={world.products.product[4]} qtmulti={qtmulti} onProductionDone={onProductionDone} services={services} myworld={world}/> 
+      <ProductComponent prod={world.products.product[5]} qtmulti={qtmulti} onProductionDone={onProductionDone} services={services} myworld={world}/> 
     </div>
-    { isActive &&
+    { isActiveM &&
+      <div className = "modal">
+      <Managers myworld={world} services={ services }/>
+      </div>
+          }
+    { isActiveU &&
     <div className = "modal">
-    <Managers myworld={world} services={ services } showManagers={showManagers}/>
+    <Unlocks myworld={world} prod={world.products.product[0]} services={ services }/>
     </div>
-    
-}
+        }
+    { isActiveC &&
+    <div className = "modal">
+    <CashUpgrades myworld={world} services={ services }/>
+    </div>
+        }
     </div>
     </div>
-  );
+    );
 }
 
 export default App;

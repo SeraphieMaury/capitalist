@@ -11,17 +11,13 @@ import {transform} from "./utils";
 type ManagersProps = {
   myworld: World
   services: Services
-  showManagers : Function
   }
 
-export default function Managers ({ myworld, services, showManagers } : ManagersProps) {  
+export default function Managers ({ myworld, services} : ManagersProps) {  
   
-const [world, setWorld] = useState(new World())
-
   function hireManager(m: Pallier) {
     if (myworld.products.product[m.idcible - 1].quantite > 0) {
     myworld.money -= m.seuil;
-    addToScoreM(world.money);
     m.unlocked = true;
     myworld.products.product[m.idcible - 1].managerUnlocked = true;
   }
@@ -30,39 +26,34 @@ const [world, setWorld] = useState(new World())
 }
 } 
 
-   function addToScoreM(value: number): void {
-     setWorld(world => ({ ...world, money: world.money + value, score: world.score + value}))
-   }
-
 
 return (
 <div className="modal">
-<div>
-<h1 className="title">Choisissez vos managers !</h1>
-</div>
-<div className="manager">
-{myworld.managers.pallier.filter( manager => !manager.unlocked).map(
-manager =>
-<div key={manager.idcible} className="managergrid">
-<div>
-<div className="logo">
-<img className="round" src= {services.server + manager.logo} style={{borderRadius:'50%'}}/>
-</div>
-</div>
-<div className="infosmanager">
-<div className="managername"> {manager.name} </div>
-<div className="managername"> MANAGER DE </div>
-<div className="managercible"> {myworld.products.product[manager.idcible-1].name} </div>
-<div className="managercost"> {manager.seuil} crédits ECTS </div>
-</div>
-<div onClick={() => hireManager(manager)}>
-<button className="embauche" disabled={myworld.money < manager.seuil}>Embaucher !</button>
-</div>
-</div>
-
-)}
-
-</div>
+  <div>
+    <h1 className="title">Choisissez vos managers !</h1>
+  </div>
+  <div className="manager">
+    {myworld.managers.pallier.filter( manager => !manager.unlocked).map(
+    manager =>
+      <div key={manager.idcible} className="managergrid">
+        <div>
+          <div className="logo">
+            <img className="round" src= {services.server + manager.logo} style={{borderRadius:'50%'}}/>
+          </div>
+        </div>
+          <div className="infos">
+            <div className="name"> {manager.name} </div>
+            <div className="name"> MANAGER DE </div>
+            <div className="cible"> {myworld.products.product[manager.idcible-1].name} </div>
+            <div className="seuil"> {manager.seuil} crédits ECTS </div>
+          </div>
+            <div onClick={() => hireManager(manager)}>
+              <button className="embauche" disabled={myworld.money < manager.seuil}>Embaucher !</button>
+            </div>
+      </div>
+    )
+  }
+  </div>
 </div>
 );
 }

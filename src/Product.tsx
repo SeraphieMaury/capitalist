@@ -8,16 +8,14 @@ import Box from '@mui/material/Box';
 type ProductProps = {
 prod: Product
 qtmulti: number
-money: number
 onProductionDone: (product: Product) => void;
 services: Services
 myworld: World
 }
-    export default function ProductComponent({ prod, qtmulti, money, onProductionDone, services, myworld } : ProductProps) 
+    export default function ProductComponent({ prod, qtmulti, onProductionDone, services, myworld } : ProductProps) 
     {  
 
-   const [progress, setProgress] = useState(0) 
-   const [world, setWorld] = useState(new World())
+   const [progress, setProgress] = useState(0)
    const savedCallback = useRef(calcScore)
    let lastupdate = Date.now();
 
@@ -38,10 +36,6 @@ myworld: World
      }
      calcMaxCanBuy();
 }
-
-function addToScoreP(value: number): void { 
-   setWorld(world => ({ ...world, money: world.money + value, score: world.score + value })) 
-  }
 
  function calcScore() {
    if (prod == null){}
@@ -76,10 +70,9 @@ function addToScoreP(value: number): void {
  
    function buyProduct(p: Product) {
       if (myworld.money >= p.cout) {
-         myworld.money -= p.cout;
-         p.quantite += 1;
+         myworld.money = myworld.money - p.cout;
+         p.quantite = p.quantite + 1;
          p.cout = p.cout * p.croissance;
-         addToScoreP(-p.cout);
       }
       for (let i = 0; i < p.palliers.pallier.length; i++) {
          if (p.id == p.palliers.pallier[i].idcible) {
@@ -146,7 +139,7 @@ function addToScoreP(value: number): void {
             </div>
             <div>
              <button className="bouton" onClick = { () => buyProduct(prod)} disabled={myworld.money < prod.cout}>
-                ACHETER {qtmulti} {prod.name} {} POUR {prod.cout*qtmulti} CREDIT(S) ECTS
+                ACHETER {qtmulti} {prod.name} POUR {prod.cout*qtmulti} CREDIT(S) ECTS
              </button>
             </div>
             </div>
