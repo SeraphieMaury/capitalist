@@ -19,18 +19,20 @@ import { transform } from "./utils";
             <div>
               <h1 className="title">Unlocks</h1>
             </div>
-            <div>
-              <div>  
+            <div className="pagemenu">
+              <div >  
                 {prod.palliers.pallier.filter(unlock => !unlock.unlocked).map( unlock => (
-                    <div key={unlock.idcible} className="unlockgrid">
-                      <div className="logo">
-                        <img className="round" src={services.server + unlock.logo} style={{borderRadius:'50%'}}/>
+                    <div key={unlock.idcible} className="grid">
+                      <div>
+                        <div className="logo">
+                            <img className="round" src={services.server + unlock.logo} style={{borderRadius:'50%'}}/>
+                        </div>
                       </div>
                       <div className="infos">
-                      
-                        <div> {myworld.products.product[unlock.idcible - 1].name}</div>
-                        <div className="seuil"> <span dangerouslySetInnerHTML={{ __html: transform(unlock.seuil) }} />  </div>
-                        <div > {unlock.typeratio} : x {unlock.ratio}</div>
+                        <div className="name"> {myworld.products.product[unlock.idcible - 1].name}</div>
+                        <div className="name"> {unlock.name}</div>
+                        <div className="seuil"> IL TE FAUT {unlock.seuil} {myworld.products.product[unlock.idcible - 1].name}</div>
+                        <div className="seuil"> {unlock.typeratio} x{unlock.ratio}</div>
                       </div>
                     </div>  
                   )

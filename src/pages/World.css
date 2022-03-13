@@ -209,7 +209,7 @@ p:hover{
     top: 100px; /* a 5% du haut */
     left:20%; /* a 20% de la gauche */
    }
-   .manager{
+   .pagemenu{
     display: grid;
     grid-template-columns: 1fr 1fr;
    }

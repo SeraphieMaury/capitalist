@@ -22,7 +22,7 @@ export default function Managers ({ myworld, services} : ManagersProps) {
     myworld.products.product[m.idcible - 1].managerUnlocked = true;
   }
   else{
-  <div>Vous n'avez pas de" + {Product.name} + "en stock"</div>    //ça fonctionne pas
+  <div>Tu n'as pas de" + {Product.name} + "en stock"</div>    //ça fonctionne pas
 }
 } 
 
@@ -30,12 +30,12 @@ export default function Managers ({ myworld, services} : ManagersProps) {
 return (
 <div className="modal">
   <div>
-    <h1 className="title">Choisissez vos managers !</h1>
+    <h1 className="title">Choisis tes managers !</h1>
   </div>
-  <div className="manager">
+  <div className="pagemenu">
     {myworld.managers.pallier.filter( manager => !manager.unlocked).map(
     manager =>
-      <div key={manager.idcible} className="managergrid">
+      <div key={manager.idcible} className="grid">
         <div>
           <div className="logo">
             <img className="round" src= {services.server + manager.logo} style={{borderRadius:'50%'}}/>
@@ -45,7 +45,7 @@ return (
             <div className="name"> {manager.name} </div>
             <div className="name"> MANAGER DE </div>
             <div className="cible"> {myworld.products.product[manager.idcible-1].name} </div>
-            <div className="seuil"> {manager.seuil} crédits ECTS </div>
+            <div className="seuil"> {manager.seuil} CREDIT(S) ECTS </div>
           </div>
             <div onClick={() => hireManager(manager)}>
               <button className="embauche" disabled={myworld.money < manager.seuil}>Embaucher !</button>
