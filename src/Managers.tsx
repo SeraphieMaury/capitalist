@@ -19,7 +19,7 @@ const [world, setWorld] = useState(new World())
 
   function hireManager(m: Pallier) {
     myworld.money -= m.seuil;
-    addToScoreM(myworld.money);
+    addToScoreM(world.money);
     m.unlocked = true;
     myworld.products.product[m.idcible - 1].managerUnlocked = true;
   } 

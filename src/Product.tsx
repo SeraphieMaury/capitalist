@@ -8,14 +8,16 @@ import Box from '@mui/material/Box';
 
 type ProductProps = {
 prod: Product
-onProductionDone: (product: Product) => void,
+qtmulti: number
+money: number
+onProductionDone: (product: Product) => void;
 services: Services
+myworld: World
 }
-    export default function ProductComponent({ prod, onProductionDone, services } : ProductProps) 
+    export default function ProductComponent({ prod, qtmulti, money, onProductionDone, services, myworld } : ProductProps) 
     {  
 
    const [progress, setProgress] = useState(0) 
-   const [completed, setCompleted] = useState(0);
    const savedCallback = useRef(calcScore)
    let lastupdate = Date.now();
 
@@ -63,8 +65,7 @@ services: Services
    } */
 }
 }
-  
-  
+ 
 
    if (prod==null) return (
       <div></div>
@@ -86,7 +87,7 @@ services: Services
          <ProgressBar transitionDuration={"0.1s"} customLabel={" "} completed={progress}/>
         </Box></div>
             </div>
-             <p>ACHETER {prod.name} {} POUR {prod.cout} CREDIT(S) ECTS</p>
+             <p>ACHETER {qtmulti} {prod.name} {} POUR {prod.cout*qtmulti} CREDIT(S) ECTS</p>
             </div>
         </div>
    );

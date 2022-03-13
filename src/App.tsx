@@ -7,12 +7,12 @@ import "./pages/World.css";
 import {transform} from "./utils";
 import Managers from './Managers';
 
-
 function App() {
   const [services, setServices] = useState(new Services(""))
   const [world, setWorld] = useState(new World())
-  const [prod, setProduct] = useState(new Product())
   const [isActive, setisActive] = useState(false);
+  let [qtmulti, setQtmulti] = useState(1);
+  let [vmulti, setVmulti] = useState('x1');
 
 
   useEffect(() => {
@@ -41,10 +41,28 @@ function showManagers() {
   addToScoreP(gain);
  }
  
- function addToScoreP(value: number): void {
-   setWorld(world => ({ ...world, money: world.money + value, score: world.score + value}))
- }
+ function addToScoreP(value: number): void { 
+   setWorld(world => ({ ...world, money: world.money + value, score: world.score + value })) 
+  }
 
+
+  function multi() {
+    if (qtmulti == 1) {
+      setVmulti('x10');
+      setQtmulti(10);
+    }else
+    if (qtmulti == 10) {
+      setVmulti('x100');
+      setQtmulti(100);
+    }else
+    if (qtmulti == 100) {
+      setVmulti('Max');
+      setQtmulti(1000);
+    }else{
+      setVmulti('x1');
+      setQtmulti(1);
+    }
+  }
 
   return (
     <div className="App">
@@ -57,8 +75,7 @@ function showManagers() {
             <span dangerouslySetInnerHTML={{__html: transform(world.money)}}></span> Crédit ECTS 
             </div>
             <div className="box2" style={{transform: 'translate(+380%)'}}> 
-            <div className ="argent">
-            x0
+            <div className ="multi" onClick={multi}> {qtmulti}
             </div>
             </div>
             <div className='id'> 
@@ -98,12 +115,12 @@ function showManagers() {
         </div>
         <div className="product">
        
-      <ProductComponent prod={ world.products.product[0]} onProductionDone={onProductionDone} services={ services }/> 
-      <ProductComponent prod={ world.products.product[1]} onProductionDone={onProductionDone} services={ services }/>
-      <ProductComponent prod={ world.products.product[2]} onProductionDone={onProductionDone} services={ services }/> 
-      <ProductComponent prod={ world.products.product[3]} onProductionDone={onProductionDone} services={ services }/> 
-      <ProductComponent prod={ world.products.product[4]} onProductionDone={onProductionDone} services={ services }/> 
-      <ProductComponent prod={ world.products.product[5]} onProductionDone={onProductionDone} services={ services }/> 
+      <ProductComponent prod={world.products.product[0]} qtmulti={qtmulti} money={world.money} onProductionDone={onProductionDone} services={services} myworld={world}/> 
+      <ProductComponent prod={world.products.product[1]} qtmulti={qtmulti} money={world.money} onProductionDone={onProductionDone} services={services} myworld={world}/>
+      <ProductComponent prod={world.products.product[2]} qtmulti={qtmulti} money={world.money} onProductionDone={onProductionDone} services={services} myworld={world}/> 
+      <ProductComponent prod={world.products.product[3]} qtmulti={qtmulti} money={world.money} onProductionDone={onProductionDone} services={services} myworld={world}/> 
+      <ProductComponent prod={world.products.product[4]} qtmulti={qtmulti} money={world.money} onProductionDone={onProductionDone} services={services} myworld={world}/> 
+      <ProductComponent prod={world.products.product[5]} qtmulti={qtmulti} money={world.money} onProductionDone={onProductionDone} services={services} myworld={world}/> 
     </div>
     { isActive &&
     <div className = "modal">
