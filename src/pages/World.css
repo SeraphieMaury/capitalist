@@ -70,71 +70,6 @@ p:hover{
     color: #224062;
     font-size: large;
 }
-.boutonManager{
-    border: 2px;
-    border-radius: 2px;
-    color: black;
-    font-weight: bold;
-    padding: 10px 15px;
-    width: 250px;
-    height: 10px;
-    margin-left: 10px;
-    margin-top: 30px;
-    text-align: center;
-    background: #4F749F;
-  }
-  .boutonUnlocks{
-    border: 2px;
-    border-radius: 2px;
-    color: black;
-    font-weight: bold;
-    padding: 10px 15px;
-    width: 250px;
-    height: 10px;
-    margin-left: 10px;
-    margin-top: 30px;
-    text-align: center;
-    background: #4F749F;
-  }
-  .boutonCash{
-    border: 2px;
-    border-radius: 2px;
-    color: black;
-    font-weight: bold;
-    padding: 10px 15px;
-    width: 250px;
-    height: 10px;
-    margin-left: 10px;
-    margin-top: 30px;
-    text-align: center;
-    background: #4F749F;
-  }
-  .boutonAngel{
-    border: 2px;
-    border-radius: 2px;
-    color: black;
-    font-weight: bold;
-    padding: 10px 15px;
-    width: 250px;
-    height: 10px;
-    margin-left: 10px;
-    margin-top: 30px;
-    text-align: center;
-    background: #4F749F;
-  }
-  .boutonInvestors{
-    border: 2px;
-    border-radius: 2px;
-    color: black;
-    font-weight: bold;
-    padding: 10px 15px;
-    width: 250px;
-    height: 10px;
-    margin-left: 10px;
-    margin-top: 30px;
-    text-align: center;
-    background: #4F749F;
-  }
 
   /* .progress {
     width: 100%;
@@ -259,7 +194,81 @@ p:hover{
         margin: 4px 2px;
         cursor: pointer;
 }
-
- 
+.cashupgradegrid{
+  border : solid black 2px;
+  margin: 5px;
+  height: 170px;
+}
+.pageupgrades{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.seuilupgrade{
+  position: relative;
+    top : -80px;
+    left : 80px;
+}
+.buycashupgrade{
+  position: relative;
+  top : -80px;
+  left : 80px;
+}
+.ratioupgrade{
+  position: relative;
+  top : -80px;
+  left : 80px;
+}
+.nameunlock{
+  position: relative;
+    top : -80px;
+    left : 80px;
+}
+.seuilunlock{
+  position: relative;
+    top : -80px;
+    left : 80px;
+}
+.pageunlock{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.unlockgrid{
+  border : solid black 2px;
+  margin: 5px;
+  height: 170px;
+}
+.logounlock{
+  transform: translate(+115%);
+    position: relative;
+    top : 20px;
+}
+.allunlock{
+  border : solid black 2px;
+  margin: 5px;
+  height: 170px;
+}
+.logoallunlock{
+  transform: translate(+115%);
+    position: relative;
+    top : 55px;
+}
+.seuilallunlock{
+  position: relative;
+  top : 10px;
+  left : 80px;
+}
+.ratioallunlock{
+  position: relative;
+  top : 10px;
+  left : 80px;
+}
+.nameallunlock{
+  position: relative;
+    top : 10px;
+    left : 80px;
+}
+.modalallunlock{
+  height: 1000px; 
+}
   
 

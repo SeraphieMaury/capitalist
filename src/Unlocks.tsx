@@ -19,34 +19,33 @@ import { transform } from "./utils";
             <div>
               <h1 className="title">Unlocks</h1>
             </div>
-            <div className="pagemenu">
+            <div className="pageunlock">
               <div >  
                 {prod.palliers.pallier.filter(unlock => !unlock.unlocked).map( unlock => (
-                    <div key={unlock.idcible} className="grid">
-                      <div>
-                        <div className="logo">
+                    <div key={unlock.idcible} className="unlockgrid">
+                        <div className="logounlock">
                             <img className="round" src={services.server + unlock.logo} style={{borderRadius:'50%'}}/>
                         </div>
-                      </div>
-                      <div className="infos">
-                        <div className="name"> {myworld.products.product[unlock.idcible - 1].name}</div>
-                        <div className="name"> {unlock.name}</div>
-                        <div className="seuil"> IL TE FAUT {unlock.seuil} {myworld.products.product[unlock.idcible - 1].name}</div>
-                        <div className="seuil"> {unlock.typeratio} x{unlock.ratio}</div>
+                      <div className="infosunlock">
+                        <div className="nameunlock"> {myworld.products.product[unlock.idcible - 1].name}</div>
+                        <div className="nameunlock"> {unlock.name}</div>
+                        <div className="seuilunlock"> IL TE FAUT {unlock.seuil} {myworld.products.product[unlock.idcible - 1].name}</div>
+                        <div className="seuilunlock"> {unlock.typeratio} x{unlock.ratio}</div>
                       </div>
                     </div>  
                   )
                   )}
               </div>
-              <div>
+              <div className="modalallunlock">
                 {myworld.allunlocks.pallier.filter(allunlocks => !allunlocks.unlocked).map( allunlocks => (
                     <div key={allunlocks.idcible} className="allunlock">
-                      <div className="logo">
+                      <div className="logoallunlock">
                         <img className="round" src={services.server + allunlocks.logo} />
                       </div>
                       <div className="infos">
-                        <div className="seuil"> {allunlocks.seuil}  </div>
-                        <div > {allunlocks.typeratio} : x {allunlocks.ratio}</div>
+                      <div className="nameallunlock"> {allunlocks.name}</div>
+                        <div className="seuilallunlock"> {allunlocks.seuil}  </div>
+                        <div className="ratioallunlock"> {allunlocks.typeratio} : x {allunlocks.ratio}</div>
                       </div>
                     </div>  
                   )

@@ -128,7 +128,7 @@ myworld: World
             </div>
             <br></br>
             <div>
-            <div>{prod.name} RAPPORTE {prod.cout * prod.quantite} CREDIT(S) ECTS</div>
+            <div>{prod.name} RAPPORTE {Math.round((prod.cout * prod.quantite) * 100) / 100} CREDIT(S) ECTS</div>
             </div>
             <br></br>
             <div className="progress"> 
@@ -139,7 +139,7 @@ myworld: World
             </div>
             <div>
              <button className="bouton" onClick = { () => buyProduct(prod)} disabled={myworld.money < prod.cout}>
-                ACHETER {qtmulti} {prod.name} POUR {prod.cout*qtmulti} CREDIT(S) ECTS
+                ACHETER {qtmulti} {prod.name} POUR {Math.round(prod.cout*qtmulti * 100) / 100} CREDIT(S) ECTS
              </button>
             </div>
             </div>

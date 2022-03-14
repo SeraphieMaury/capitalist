@@ -39,17 +39,17 @@ export default function Cashupgrades({ myworld, services }: CashUpgradesProps) {
                 <h1 className="title">Cash Upgrades</h1>
             </div>
             <div>
-                <div>
+                <div className="pageupgrades">
                     {myworld.upgrades.pallier.filter(cashupgrades => !cashupgrades.unlocked).map(cashupgrades => (
                         <div key={cashupgrades.idcible} className="cashupgradegrid">
                             <div className="logo">
                                 <img className="round" src= {services.server + cashupgrades.logo} style={{borderRadius:'50%'}} />
                             </div>
-                            <div className="infos">
-                                <div className="seuil"> {cashupgrades.seuil}  </div>
-                                <div > {cashupgrades.typeratio} : x {cashupgrades.ratio}</div>
+                            <div className="infoupgrade">
+                                <div className="seuilupgrade"> {cashupgrades.seuil}  </div>
+                                <div className="ratioupgrade"> {cashupgrades.typeratio} : x {cashupgrades.ratio}</div>
                             </div>
-                            <div id="closebutton">
+                            <div className="buycashupgrade">
                                 <button onClick={() => buyCashupragdes(cashupgrades)} disabled={myworld.money < cashupgrades.seuil}>Acheter !</button>
                             </div>
                         </div>
