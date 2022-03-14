@@ -7,6 +7,7 @@ import "./pages/World.css";
 import {transform} from "./utils";
 import Managers from './Managers';
 import Unlocks from './Unlocks';
+import AllUnlocks from './AllUnlocks';
 import CashUpgrades from './CashUpgrades';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   const [world, setWorld] = useState(new World())
   const [isActiveM, setisActiveM] = useState(false);
   const [isActiveU, setisActiveU] = useState(false);
+  const [isActiveA, setisActiveA] = useState(false);
   const [isActiveC, setisActiveC] = useState(false);
   let [qtmulti, setQtmulti] = useState(1);
   let [vmulti, setVmulti] = useState('x1');
@@ -43,6 +45,14 @@ function showUnlocks() {
     setisActiveU(false)
   }else{
     setisActiveU(true)
+  }
+}
+
+function showAllUnlocks() {
+  if (isActiveA == true){
+    setisActiveA(false)
+  }else{
+    setisActiveA(true)
   }
 }
 
@@ -155,6 +165,7 @@ function showCashUpgrades() {
     <Unlocks myworld={world} prod={world.products.product[3]} services={ services }/>
     <Unlocks myworld={world} prod={world.products.product[4]} services={ services }/>
     <Unlocks myworld={world} prod={world.products.product[5]} services={ services }/>
+    <AllUnlocks myworld={world} prod={world.products.product[0]} services={ services }/>
     </div>
         }
     { isActiveC &&
