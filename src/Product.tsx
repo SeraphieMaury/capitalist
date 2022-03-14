@@ -70,9 +70,9 @@ myworld: World
  
    function buyProduct(p: Product) {
       if (myworld.money >= p.cout) {
-         myworld.money = myworld.money - p.cout;
-         p.quantite = p.quantite + 1;
-         p.cout = p.cout * p.croissance * qtmulti;
+         myworld.money = myworld.money - p.cout * qtmulti;
+         p.quantite = p.quantite + qtmulti;
+         p.cout = p.cout * p.croissance;
       }
       for (let i = 0; i < p.palliers.pallier.length; i++) {
          if (p.id == p.palliers.pallier[i].idcible) {

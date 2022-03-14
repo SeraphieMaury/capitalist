@@ -21,7 +21,8 @@ import { transform } from "./utils";
             </div>
             <div className="pageunlock">
               <div >  
-                {prod.palliers.pallier.filter(unlock => !unlock.unlocked).map( unlock => (
+                {prod.palliers.pallier.filter(unlock => !unlock.unlocked).map( 
+                  unlock => 
                     <div key={unlock.idcible} className="unlockgrid">
                         <div className="logounlock">
                             <img className="round" src={services.server + unlock.logo} style={{borderRadius:'50%'}}/>
@@ -33,7 +34,6 @@ import { transform } from "./utils";
                         <div className="seuilunlock"> {unlock.typeratio} x{unlock.ratio}</div>
                       </div>
                     </div>  
-                  )
                   )}
               </div>
               <div className="modalallunlock">
