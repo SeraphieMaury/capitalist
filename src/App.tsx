@@ -19,7 +19,30 @@ function App() {
   const [isActiveC, setisActiveC] = useState(false);
   let [qtmulti, setQtmulti] = useState(1);
   let [vmulti, setVmulti] = useState('x1');
+ /*  const [username, setUsername] = useState("")
 
+  useEffect(() => {
+    if (username !== "") {
+    let services = new Services(username)
+    setServices(services)
+    services.getWorld().then(response => {
+    let liste = compute_unlocks_list(response.data) 
+    setWorld(response.data)
+    setUnlockList(liste) 
+    }
+    )
+    }
+   }, [username])
+   useEffect(() => {
+    let username = localStorage.getItem("username");
+    // si pas de username, on génère un username aléatoire
+    if (!username || username === "") {
+    username = "Eleve" + Math.floor(Math.random() * 10000);
+    }
+    localStorage.setItem("username", username);
+    setUsername(username)
+   }, [])
+ */
 
   useEffect(() => {
     let services = new Services("")
@@ -110,6 +133,7 @@ function showCashUpgrades() {
             </div>
             <div className='id'> 
             Votre ID : 15482
+            {/* <input type="text" value={username} onChange={onUserNameChanged}/> */}
             </div>
         </div>
         <hr></hr>

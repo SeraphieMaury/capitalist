@@ -222,6 +222,7 @@ p:hover{
   position: relative;
     top : -80px;
     left : 80px;
+    font-weight: bold;
 }
 .seuilunlock{
   position: relative;
@@ -229,8 +230,8 @@ p:hover{
     left : 80px;
 }
 .pageunlock{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display:grid;
+  grid-template-columns: 1fr;
 }
 .unlockgrid{
   border : solid black 2px;
@@ -238,7 +239,7 @@ p:hover{
   height: 170px;
 }
 .logounlock{
-  transform: translate(+115%);
+  transform: translate(50%);
     position: relative;
     top : 20px;
 }
@@ -248,7 +249,7 @@ p:hover{
   height: 170px;
 }
 .logoallunlock{
-  transform: translate(+115%);
+  transform: translate(50%);
     position: relative;
     top : 55px;
 }
@@ -266,6 +267,7 @@ p:hover{
   position: relative;
     top : 10px;
     left : 80px;
+    font-weight: bold;
 }
 .modalallunlock{
   height: 1000px; 
