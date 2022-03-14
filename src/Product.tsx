@@ -128,7 +128,7 @@ myworld: World
             </div>
             <br></br>
             <div>
-            <div>{prod.name} RAPPORTE {Math.round((prod.cout * prod.quantite) * 100) / 100} CREDIT(S) ECTS</div>
+            <div>{prod.name} RAPPORTE {Math.round((prod.revenu * prod.quantite) * 100) / 100} CREDIT(S) ECTS</div>
             </div>
             <br></br>
             <div className="progress"> 
