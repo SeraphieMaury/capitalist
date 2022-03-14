@@ -150,6 +150,11 @@ function showCashUpgrades() {
     { isActiveU &&
     <div className = "modal">
     <Unlocks myworld={world} prod={world.products.product[0]} services={ services }/>
+    <Unlocks myworld={world} prod={world.products.product[1]} services={ services }/>
+    <Unlocks myworld={world} prod={world.products.product[2]} services={ services }/>
+    <Unlocks myworld={world} prod={world.products.product[3]} services={ services }/>
+    <Unlocks myworld={world} prod={world.products.product[4]} services={ services }/>
+    <Unlocks myworld={world} prod={world.products.product[5]} services={ services }/>
     </div>
         }
     { isActiveC &&
